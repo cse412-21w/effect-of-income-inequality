@@ -6,11 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel src/index.html",
-<<<<<<< HEAD
-    "build": "parcel build src/index.html --no-minify --public-url https://cse412-21w.github.io/effect-of-income-inequality & RD /S /Q .\\docs & ren .\\dist docs;"
-=======
-    "build": "parcel build src/index.html --no-minify --public-url https://cse412-21w.github.io/project-demo & RD /S /Q .\\docs & ren .\\dist docs;"
->>>>>>> 397a1a2f3ecb1a1d57e6a163c26b105a128be529
+    "build": "parcel build src/index.html --no-minify --public-url https://cse412-21w.github.io/effect-of-income-inequality & RD /S /Q .\\docs & ren .\\dist docs"
   },
   "repository": {
     "type": "git",
