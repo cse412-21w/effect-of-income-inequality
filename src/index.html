@@ -123,7 +123,8 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
        <div>
         <a href="https://plotly.com/~kcao22/3/?share_key=RL7yrUJCTwSYeInqqjnBlX" target="_blank" title="Top1%" style="display: block; text-align: center;"><img src="https://plotly.com/~kcao22/3.png?share_key=RL7yrUJCTwSYeInqqjnBlX" alt="Top1%" style="max-width: 100%;width: 1000px;"  width="1000" onerror="this.onerror=null;this.src='https://plotly.com/404.png';" /></a>
         <script data-plotly="kcao22:3" sharekey-plotly="RL7yrUJCTwSYeInqqjnBlX" src="https://plotly.com/embed.js" async></script>
-    </div>
+       </div>
+
     <p>Source:<a href="https://ourworldindata.org/income-inequality"target="_blank"><mark>Top 1% Shares</mark></a></p>
     
      </div>
@@ -167,6 +168,56 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
         Since there is no open data on depression rate and income level for the U.S., India's data is used to show how depression and income are correlated. As seen from the visual above, the current depression rate seems to have a strong negative correlation with income level. The higher income level has a much lower current depression rate. On the other hand, depression has the largest impact on the low-income classes, but less so as an individual's income status rises.
       </p>
 
+     </vegalite>
+      <html>
+        <head>
+          <title>Embedding Vega-Lite</title>
+          <script src="https://cdn.jsdelivr.net/npm/vega@5.19.1"></script>
+          <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.0.0"></script>
+          <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.15.1"></script>
+        </head>
+        <body>
+          <div id="vis"></div>
+      
+          <script type="text/javascript">
+            var yourVlSpec = {
+              $schema: "https://vega.github.io/schema/vega-lite/v5.json",
+               description: "Relationship between education and Weekly earning, interative plot with tooltip",
+               title: "A Simple Bar Chart",
+               background: "floralwhite",
+               width: 820,
+               height: 420,
+                data: {
+                  values: [
+                      {"Education": " < high school","Median Weekly Earning in 2016 ($)": 504},
+                      {"Education": "High school diploma","Median Weekly Earning in 2016 ($)": 692},
+                      {"Education": "no degree", "Median Weekly Earning in 2016 ($)": 756},
+                      {"Education": "Associate degree", "Median Weekly Earning in 2016 ($)": 819 },
+                      {"Education": "All workers", "Median Weekly Earning in 2016 ($)": 885},
+                      {"Education": "Bachelor's degree", "Median Weekly Earning in 2016 ($)": 1156},
+                      {"Education": "Master's degree", "Median Weekly Earning in 2016 ($)": 1380},
+                      {"Education": "Doctoral degree", "Median Weekly Earning in 2016 ($)": 1664},
+                      {"Education": "Professional degree", "Median Weekly Earning in 2016 ($)": 1745} 
+                     ]
+                  },
+
+                    mark: {type: 'bar', cornerRadiusEnd: 4},
+                    encoding: {
+                      x: {"field": "Education", "type": "nominal","sort":{}},
+                      y: { "field": "Median Weekly Earning in 2016 ($)","type": "quantitative","sort": {"field": "Median Weekly Earning in 2016 ($)"}
+                    },
+
+                      color: {"value": "#ff9900"},
+                      tooltip: {"field": "Median Weekly Earning in 2016 ($)","type": "quantitative" }
+                     },
+                    config: {"axisX":{"labelAngle":0}}
+                  }
+                  vegaEmbed('#vis', yourVlSpec);
+          </script>
+        </body>
+      </html>
+
+      
       <p>Source:<a href="https://www.ft.com/content/bf700f1a-3a22-11e9-b72b-2c7f526ca5d0"target="_blank"><mark>Financial Time</mark></a></p>
       <p style="text-indent: 50px"><a href="https://www.src.isr.umich.edu/blog/growing-wealth-gaps-in-education/"target="_blank"><mark>Growing Wealth Gaps in Education</mark></a></p>
       <p style="text-indent: 50px"><a href="https://bmjopen.bmj.com/content/bmjopen/9/6/e027250.full.pdf?__cf_chl_jschl_tk__=fcf77c78c802198fc45ef3c3b2bae2c596e6bc45-1614208450-0-ASrwrsoZjek7UKyo52MXuXgOkaXn2WLOkyfV82vH3ABLLiktSnIk0CKZVAOFLsYHsLxktyzn5AcyJ9IhFXaB3Bwo0QFoPF8xzYFHQfXO7jSTaDWG1WtS9o7k2eMsiKAPLN-wzphrz3-CNdQ2ZHx0xtWFUhoIoyug6xREPJswtwqv4uj-8xvqBa_z0CX_hdMGOJwxsxs9jo2en6LpL_xNmt0V-VBE8ATocPdPqh4uSGslzjxautbKEF7chlY5XCkdYaZ1neV5rLCovm-c1tS2V73M5J-AGNkvYMJCMiZGl0ktvd1qmBpb6KW75uC1ue-8_rozYvIBw1LAl0fXJxd74BP2Oz4yPa7WmTfAmlhJiC1U"target="_blank"><mark>BMJ Open</mark></a></p>
